@@ -23,7 +23,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 
 
 
@@ -76,15 +75,11 @@ public class MainActivity extends Activity {
             public void onClick(View view) {
                 Bitmap signatureBitmap = mSignaturePad.getSignatureBitmap();
                 if (addJpgSignatureToGallery(signatureBitmap)) {
-                    Toast.makeText(MainActivity.this, "Signature saved into the Gallery", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Doodle saved into the Gallery", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(MainActivity.this, "Unable to store the signature", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Unable to store the Doodle", Toast.LENGTH_SHORT).show();
                 }
-                if (addSvgSignatureToGallery(mSignaturePad.getSignatureSvg())) {
-                    Toast.makeText(MainActivity.this, "SVG Signature saved into the Gallery", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(MainActivity.this, "Unable to store the SVG signature", Toast.LENGTH_SHORT).show();
-                }
+
             }
         });
     }
@@ -108,7 +103,7 @@ public class MainActivity extends Activity {
         File file = new File(Environment.getExternalStoragePublicDirectory(
                 Environment.DIRECTORY_PICTURES), albumName);
         if (!file.mkdirs()) {
-            Log.e("SignaturePad", "Directory not created");
+            Log.e("Doodle", "Directory not created");
         }
         return file;
     }
@@ -143,23 +138,6 @@ public class MainActivity extends Activity {
         MainActivity.this.sendBroadcast(mediaScanIntent);
     }
 
-    public boolean addSvgSignatureToGallery(String signatureSvg) {
-        boolean result = false;
-        try {
-            File svgFile = new File(getAlbumStorageDir("Doodle"), String.format("Doodle_%d.svg", System.currentTimeMillis()));
-            OutputStream stream = new FileOutputStream(svgFile);
-            OutputStreamWriter writer = new OutputStreamWriter(stream);
-            writer.write(signatureSvg);
-            writer.close();
-            stream.flush();
-            stream.close();
-            scanMediaFile(svgFile);
-            result = true;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return result;
-    }
 
     /**
      * Checks if the app has permission to write to device storage
