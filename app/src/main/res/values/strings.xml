@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">SignaturePad</string>
+    <string name="app_name">Pass Doodle</string>
     <string name="agreement">Draw above the line.</string>
     <string name="clear_pad">Clear</string>
     <string name="save_signature">Save Doodle</string>
