@@ -1,4 +1,4 @@
-package com.github.gcacace.signaturepad.utils;
+package com.kakashiaswin.utils;
 
 /**
  * Created by gcacace on 28/02/14.

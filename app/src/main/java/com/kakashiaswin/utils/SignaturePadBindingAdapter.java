@@ -1,4 +1,4 @@
-package com.github.gcacace.signaturepad.utils;
+package com.kakashiaswin.utils;
 
 import android.databinding.BindingAdapter;
 

@@ -1,4 +1,4 @@
-package com.github.gcacace.signaturepad.view;
+package com.kakashiaswin.view;
 
 import android.annotation.SuppressLint;
 import android.os.Build;

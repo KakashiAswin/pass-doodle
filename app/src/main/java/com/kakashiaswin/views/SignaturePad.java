@@ -1,4 +1,4 @@
-package com.github.gcacace.signaturepad.views;
+package com.kakashiaswin.views;
 
 import android.content.Context;
 import android.content.res.Resources;
