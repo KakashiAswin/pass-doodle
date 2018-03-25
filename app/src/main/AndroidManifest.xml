@@ -29,7 +29,8 @@
         <activity
             android:name=".DisplayImg"
             android:label="@string/title_activity_display_img"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme">
+        </activity>
     </application>
 
 </manifest>

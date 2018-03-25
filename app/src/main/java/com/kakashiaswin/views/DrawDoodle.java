@@ -27,7 +27,7 @@ import com.github.gcacace.signaturepad.view.ViewTreeObserverCompat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SignaturePad extends View {
+public class DrawDoodle extends View {
     //View state
     private List<TimedPoint> mPoints;
     private boolean mIsEmpty;
@@ -69,7 +69,7 @@ public class SignaturePad extends View {
     private Bitmap mSignatureBitmap = null;
     private Canvas mSignatureBitmapCanvas = null;
 
-    public SignaturePad(Context context, AttributeSet attrs) {
+    public DrawDoodle(Context context, AttributeSet attrs) {
         super(context, attrs);
 
         TypedArray a = context.getTheme().obtainStyledAttributes(
