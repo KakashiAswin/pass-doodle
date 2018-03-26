@@ -76,6 +76,9 @@ public class MainActivity extends Activity {
                 Bitmap signatureBitmap = mSignaturePad.getSignatureBitmap();
                 if (addJpgSignatureToGallery(signatureBitmap)) {
                     Toast.makeText(MainActivity.this, "Doodle saved into the Gallery", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(MainActivity.this, DisplayImg.class);
+                    startActivity(intent);
+                    MainActivity.this.finish();
                 } else {
                     Toast.makeText(MainActivity.this, "Unable to store the Doodle", Toast.LENGTH_SHORT).show();
                 }
